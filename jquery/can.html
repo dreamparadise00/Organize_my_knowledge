@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    table{
+      width:400px;
+      border:1px solid black;
+    }
+    table td,th{
+      width:50%;
+      border:1px solid black;
+      height:30px;
+    }
+    tbody th{
+      background-color:#abc;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2">鼠标点击表格就可以编辑</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>学号</th>
+        <th>姓名</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td class="editable">周一</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="editable">网二</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="editable">张三</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="editable">李四</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script type="text/javascript">
+  $(function(){
+  	$("tbody tr:even").css("background-color","#edf");
+  	var $editTd = $("td.editable");
+  	$editTd.click(function(){
+  		var $tdObj = $(this);
+  		var $inputObj = $("<input type='text'/>");
+  		$inputObj.width($(this).width())
+  		.css({"border":"none", "background-color":$(this).css("background-color")});
+  		if($(this).children("input[type='text']").size() > 0){
+  			return false;
+  		}
+  		$inputObj.val($(this).text());
+  		$(this).empty()
+  		.append($inputObj);
+  		$inputObj.trigger("select")
+  		.keyup(function(event){
+  			var keyCode = event.which;//ie
+  			if(keyCode == 13){
+  				$tdObj.text($(this).val());
+
+  				$.get("update.jsp", {username:$(this).val(), userId:$tdObj.prev().text()}, function(data){
+  					if(data == "fail"){
+  						alert("修改失败");
+  					}else{
+  						alert("修改成功");
+  					}
+  				}, "text");
+  			}
+  		});
+  	});
+  })
+
+</script>
+</html>

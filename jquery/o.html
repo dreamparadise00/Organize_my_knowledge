@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    #div1{
+
+    }
+  </style>
+</head>
+<body>
+  <div id="div1"></div>
+  <button type="button" name="button">选中到右边>></button>
+  <button type="button" name="button">全部到右边>></button>
+  <div id="div2"></div>
+  <button type="button" name="button"><<选中到左边</button>
+  <button type="button" name="button"><<全部到左边</button>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script type="text/javascript">
+  $(function () {
+    $("#add").on("click",function () {
+      $("#select1 option:selected").appendTo("#select2");
+      $("#select2 option").prop("selected",false);
+    })
+    $("#add_all").on("click",function () {
+      $("#selected option").appendTo("select2");
+    })
+    $("#select1").on("dbclick",function () {
+      $("#select1 option:selected").appendTo("select2");
+    })
+  })
+
+</script>
+</html>
