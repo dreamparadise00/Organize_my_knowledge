@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>文本框得到/失去焦点练习，完成文本框得到/失去焦点时动态变换文本框样式功能</title>
+  <style media="screen">
+  body{
+    font:normal 12px/17px Arial;
+  }
+  div{
+      padding:2px;
+  }
+  input, textarea {
+     width: 12em;
+     border: 1px solid #888;
+  }
+  .focus {
+     border: 1px solid #f00;
+     background: #fcc;
+  }
+  </style>
+</head>
+<body>
+  <form class="" action="index.html" method="post">
+    <fieldset>
+      <legend>个人基本信息</legend>
+      <div><label for="username">名称：</label><input type="text" id="username"></div>
+      <div><label for="password">密码：</label><input type="password" id="password"></div>
+      <div><label for="msg">详细信息：</label><textarea name="msg" rows="2" cols="20"></textarea>
+    </fieldset>
+  </form>
+  <script src="jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $(":input").focus(function(){
+        $(this).addClass("focus");
+      }).blur(function(){
+        $(this).removeClass("focus");
+      });
+    })
+
+  </script>
+</body>
+</html>
