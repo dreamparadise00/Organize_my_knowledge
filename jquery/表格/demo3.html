@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>选中包含指定字符串的元素为其添加样式selected</title>
+  <title>单击行加亮并选中单选按钮</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="jquery-1.12.4.js"></script>
   <script type="text/javascript">
     $(function(){
-        $("tbody tr:contains('李四')").css("background","red");
+        $("tbody >tr").on("click",function(){
+          $(this).addClass("selected").siblings().removeClass("selected").end().find("input").prop("checked",true);
+        });
     })
   </script>
 </head>
