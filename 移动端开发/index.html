@@ -5,53 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <style media="screen">
-    #header{
-        height: 1.02rem;/* 1rem = 1*50px */
-        background: #06c1ae;
-        line-height: 1.02rem;
-        display: -webkit-box;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1;
-    }
-    #city{
-        width: 1.2rem;
-        background: url(../img/downarrow.png) no-repeat 0.9rem center;
-        -webkit-background-size: 0.32rem 0.32rem;
-        background-size: 0.32rem 0.32rem;
-        color: #fff;
-        margin: 0 0.2rem;
-    }
-    #mine{
-        color: #fff;
-        width: 0.6rem;
-        margin: 0 0.2rem;
-    }
-    #search{
-        -webkit-box-flex: 1;
-    }
-    #search input{
-        width: 100%;
-        height: 0.64rem;
-        -webkit-border-radius: 0.06rem;
-        -moz-border-radius: 0.06rem;
-        border-radius: 0.06rem;
-        outline: none;
-        border: 0;
-        background: #05a494 url(../img/magnify.png) no-repeat 0.1rem center;
-        -webkit-background-size: 0.32rem 0.32rem;
-        background-size: 0.32rem 0.32rem;
-        text-indent: 0.5rem;
-        color: #fff;
-    }
-    #search input::-webkit-input-placeholder{/* 伪元素选择器 */
-        color: #fff;
-        opacity: .8;
-    }
-  </style>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/jquery-1.12.4.js" ></script>
+  <script src="js/rem.js" ></script>
+
 </head>
 <body>
   <div data-role="page">
@@ -63,6 +21,289 @@
       <div id="mine">
         <span>我的</span>
       </div>
+    </div>
+    <div role="main" class="ui-content">
+        <div id="banner"></div>
+        <div id="guide">
+            <ul>
+                <li>
+                    <img src="img/meishi.png" alt="">
+                    <p>美食</p>
+                </li>
+                <li>
+                    <img src="img/dianying.png" alt="">
+                    <p>电影</p>
+                </li>
+                <li>
+                    <img src="img/jiudian.png" alt="">
+                    <p>酒店</p>
+                </li>
+                <li>
+                    <img src="img/yule.png" alt="">
+                    <p>娱乐</p>
+                </li>
+                <li>
+                    <img src="img/waimai.png" alt="">
+                    <p>外卖</p>
+                </li>
+
+                <li>
+                    <img src="img/meishi.png" alt="">
+                    <p>美食</p>
+                </li>
+                <li>
+                    <img src="img/dianying.png" alt="">
+                    <p>电影</p>
+                </li>
+                <li>
+                    <img src="img/jiudian.png" alt="">
+                    <p>酒店</p>
+                </li>
+                <li>
+                    <img src="img/yule.png" alt="">
+                    <p>娱乐</p>
+                </li>
+                <li>
+                    <img src="img/waimai.png" alt="">
+                    <p>外卖</p>
+                </li>
+                <li>
+                    <img src="img/ktv.png" alt="">
+                    <p>KTV</p>
+                </li>
+                <li>
+                    <img src="img/zhoubianyou.png" alt="">
+                    <p>周边游</p>
+                </li>
+                <li>
+                    <img src="img/liren.png" alt="">
+                    <p>丽人</p>
+                </li>
+                <li>
+                    <img src="img/xiaochi.png" alt="">
+                    <p>小吃</p>
+                </li>
+                <li>
+                    <img src="img/jipiao.png" alt="">
+                    <p>机票</p>
+                </li>
+                <li>
+                    <img src="img/ktv.png" alt="">
+                    <p>KTV</p>
+                </li>
+                <li>
+                    <img src="img/zhoubianyou.png" alt="">
+                    <p>周边游</p>
+                </li>
+                <li>
+                    <img src="img/liren.png" alt="">
+                    <p>丽人</p>
+                </li>
+                <li>
+                    <img src="img/xiaochi.png" alt="">
+                    <p>小吃</p>
+                </li>
+                <li>
+                    <img src="img/jipiao.png" alt="">
+                    <p>机票</p>
+                </li>
+            </ul>
+            <div id="nav">
+                <span id="left" class="active"></span>
+                <span id="right"></span>
+            </div>
+        </div>
+        <div id="activity">
+            <div>
+                <h3 class="friend">我们约吧</h3>
+                <p>恋人家人好朋友</p>
+                <img src="img/activity1.png" alt="">
+            </div>
+            <div>
+                <h3 class="low-price">低价超值</h3>
+                <p>十元惠生活</p>
+                <img src="img/activity2.jpg" alt="">
+            </div>
+            <div>
+                <h3 class="quick-meal">工作简餐</h3>
+                <p>实惠方便选择多</p>
+                <img src="img/activity3.png" alt="">
+            </div>
+        </div>
+        <div id="guess">
+            <h3>猜你喜欢</h3>
+            <ul id="menu">
+                <li>
+                    <img src="img/xianyuxian.jpg" alt="" class="brand">
+                    <div class="detail">
+                        <p class="detail-name">鲜芋仙</p>
+                        <p class="detail-desc">[11店通用]10元代金券1份</p>
+                        <div>
+                            <span class="price">7.5元</span>
+                            <span>门市价：10元</span>
+                            <span class="sold">已售147053</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/xianyuxian.jpg" alt="" class="brand">
+                    <div class="detail">
+                        <p class="detail-name">鲜芋仙</p>
+                        <p class="detail-desc">[11店通用]10元代金券1份</p>
+                        <div>
+                            <span class="price">7.5元</span>
+                            <span>门市价：10元</span>
+                            <span class="sold">已售147053</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/xianyuxian.jpg" alt="" class="brand">
+                    <div class="detail">
+                        <p class="detail-name">鲜芋仙</p>
+                        <p class="detail-desc">[11店通用]10元代金券1份</p>
+                        <div>
+                            <span class="price">7.5元</span>
+                            <span>门市价：10元</span>
+                            <span class="sold">已售147053</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/xianyuxian.jpg" alt="" class="brand">
+                    <div class="detail">
+                        <p class="detail-name">鲜芋仙</p>
+                        <p class="detail-desc">[11店通用]10元代金券1份</p>
+                        <div>
+                            <span class="price">7.5元</span>
+                            <span>门市价：10元</span>
+                            <span class="sold">已售147053</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/xianyuxian.jpg" alt="" class="brand">
+                    <div class="detail">
+                        <p class="detail-name">鲜芋仙</p>
+                        <p class="detail-desc">[11店通用]10元代金券1份</p>
+                        <div>
+                            <span class="price">7.5元</span>
+                            <span>门市价：10元</span>
+                            <span class="sold">已售147053</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/xianyuxian.jpg" alt="" class="brand">
+                    <div class="detail">
+                        <p class="detail-name">鲜芋仙</p>
+                        <p class="detail-desc">[11店通用]10元代金券1份</p>
+                        <div>
+                            <span class="price">7.5元</span>
+                            <span>门市价：10元</span>
+                            <span class="sold">已售147053</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/xianyuxian.jpg" alt="" class="brand">
+                    <div class="detail">
+                        <p class="detail-name">鲜芋仙</p>
+                        <p class="detail-desc">[11店通用]10元代金券1份</p>
+                        <div>
+                            <span class="price">7.5元</span>
+                            <span>门市价：10元</span>
+                            <span class="sold">已售147053</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/xianyuxian.jpg" alt="" class="brand">
+                    <div class="detail">
+                        <p class="detail-name">鲜芋仙</p>
+                        <p class="detail-desc">[11店通用]10元代金券1份</p>
+                        <div>
+                            <span class="price">7.5元</span>
+                            <span>门市价：10元</span>
+                            <span class="sold">已售147053</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/xianyuxian.jpg" alt="" class="brand">
+                    <div class="detail">
+                        <p class="detail-name">鲜芋仙</p>
+                        <p class="detail-desc">[11店通用]10元代金券1份</p>
+                        <div>
+                            <span class="price">7.5元</span>
+                            <span>门市价：10元</span>
+                            <span class="sold">已售147053</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/xianyuxian.jpg" alt="" class="brand">
+                    <div class="detail">
+                        <p class="detail-name">鲜芋仙</p>
+                        <p class="detail-desc">[11店通用]10元代金券1份</p>
+                        <div>
+                            <span class="price">7.5元</span>
+                            <span>门市价：10元</span>
+                            <span class="sold">已售147053</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/xianyuxian.jpg" alt="" class="brand">
+                    <div class="detail">
+                        <p class="detail-name">鲜芋仙</p>
+                        <p class="detail-desc">[11店通用]10元代金券1份</p>
+                        <div>
+                            <span class="price">7.5元</span>
+                            <span>门市价：10元</span>
+                            <span class="sold">已售147053</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/xianyuxian.jpg" alt="" class="brand">
+                    <div class="detail">
+                        <p class="detail-name">鲜芋仙</p>
+                        <p class="detail-desc">[11店通用]10元代金券1份</p>
+                        <div>
+                            <span class="price">7.5元</span>
+                            <span>门市价：10元</span>
+                            <span class="sold">已售147053</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/xianyuxian.jpg" alt="" class="brand">
+                    <div class="detail">
+                        <p class="detail-name">鲜芋仙</p>
+                        <p class="detail-desc">[11店通用]10元代金券1份</p>
+                        <div>
+                            <span class="price">7.5元</span>
+                            <span>门市价：10元</span>
+                            <span class="sold">已售147053</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/xianyuxian.jpg" alt="" class="brand">
+                    <div class="detail">
+                        <p class="detail-name">鲜芋仙</p>
+                        <p class="detail-desc">[11店通用]10元代金券1份</p>
+                        <div>
+                            <span class="price">7.5元</span>
+                            <span>门市价：10元</span>
+                            <span class="sold">已售147053</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="go-top"></div>
     </div>
   </div>
 </body>
