@@ -35,7 +35,26 @@
     //   let a=10;          //临时失效区，访问不了a，即使全局有
     // }
     // fn();
-
+    let a = 5;
+    let b = 10;
+    // let temp ;
+    // temp = a;
+    // a = b;
+    // b = temp;
+    // console.log(a,b);
+    // function change(a,b) {
+    //   let temp ;
+    //   temp = a;
+    //   a = b;
+    //   b = temp;
+    //
+    // }
+    // change(a,b)
+    // console.log(a,b);
+    // a = [b,b=a][0];
+    // console.log(a,b);
+    [a,b] = [b,a];
+    console.log(a,b);
   </script>
 </head>
 <body>
