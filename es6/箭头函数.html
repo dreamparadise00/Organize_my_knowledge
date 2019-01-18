@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button type="button" name="button" id="btn">click</button>
+  <script type="text/javascript">
+    // a();
+    // b();
+    // function a(){
+    //   console.log("a");
+    //
+    // }
+    // var b = function(){
+    //   console.log("b");
+    // }
+    // var fn = (x) => {
+    //   console.log('fn',x);
+    // }
+    // fn(3);
+    // var fn = x =>console.log('fn',x);
+
+    // var fn2 = ([x,y=5]) => {
+    //        console.log(x,y);
+    //    }
+    //    fn2('abc');
+    // var fn3 = ([x,y]) =>{
+    //   console.log(x,y);
+    // }
+    // fn3([1,2]);
+
+    var oBtn = document.getElementById('btn');
+       // oBtn.onclick = function() {
+       //     console.log(this);
+       // }
+      // 结果为：<button type="button" name="button" id="btn">click</button>
+
+      // oBtn.onclick = () => {
+      //     console.log(this);
+      // }
+      //结果为：window
+      /* 箭头函数中this指的是声明时的this   父作用域中的this
+           普通函数中this指的是调用时的this
+        */
+
+        // oBtn.onclick = function(){
+        //         setTimeout(function(){
+        //             console.log(this);
+        //         },1000)
+        //     }
+            //window
+      // oBtn.onclick = function() {
+      //       setTimeout(() => {
+      //           console.log(this);
+      //       },1000);
+      //   }
+        //结果为：<button type="button" name="button" id="btn">click</button>
+
+          // var obj = {
+          //     name:'zxs',
+          //     age:21,
+          //     say:function(){
+          //         console.log(this);
+          //     }
+          // }
+
+          let obj = {
+              name:'zxs',
+              age:21,
+              say:function() {
+                  setTimeout(() => {
+                      console.log(this);
+                  });
+              }
+          }
+          obj.say();
+
+          /*
+              this指向问题
+              函数中 window
+              点击事件this 指向谁的点击事件this指向谁
+              定时器中this window
+              在对象中this指向当前对象
+          */
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
