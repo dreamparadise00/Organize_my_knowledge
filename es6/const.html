@@ -6,9 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script>
-    const obj {    //地址不能改，但里面的值可以更改
-      name = 'zhangsan';
+    /* const 与 var区别
+            1.let没有变量提升
+            2.块级作用域
+            3.不能重复声明
+            4.let暂时性死区 （临时失效区） 在当前作用域不允许有同名的变量进来
+        */
+    const obj  = {    //地址不能改，但里面的值可以更改
+      name : 'zhangsan'
     }
+    obj.name = 'lisi';
+    Object.freeze(obj);    //固定
     console.log(obj.name);
   </script>
 </head>
