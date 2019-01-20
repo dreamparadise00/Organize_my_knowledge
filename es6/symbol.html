@@ -9,33 +9,35 @@
 <body>
   <script type="text/javascript">
     // 基本数据类型  string unmber boolean null undefined symbol独一无二
-    let name = Symbol('n');
-    let age = Symbol('a');
-
-    let obj = {
-        age:12
-    }
-    obj[name] = 'xx';
-    // obj[age] = '20';
-    console.log(name);
-    console.log(age);
-    console.log(obj);
+    // let name = Symbol('n');
+    // let age = Symbol('a');
+    //
+    // let obj = {
+    //     age:12
+    // }
+    // obj[name] = 'xx';
+    // // obj[age] = '20';
+    // console.log(name);
+    // console.log(age);
+    // console.log(obj);
     // // 动态属性[]
+
+
     // for( key in obj){
-    //     console.log(key,obj.anem);
+    //     console.log(key,obj.name);
     // }
 
 
-    // var person1 = {
-    //     name:'zxs',
-    //     age:20
-    // }
+    var person1 = {
+        name:'zxs',
+        age:20
+    }
 
-    // console.log(person1.name);
+    console.log(person1.name);
 
-    // for(var key in person1){
-    //     console.log(key,person1[key]);
-    // }
+    for(var key in person1){
+        console.log(key,person1[key]);
+    }
   </script>
 </body>
 </html>
