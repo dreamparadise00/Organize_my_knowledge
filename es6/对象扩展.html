@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var name = "zs";
+    var age = 20;
+    var sc = 'school';
+
+    // 属性简洁表示法 包括属性和方法
+    // • 同名属性可以省略不写
+    // • 可以省略函数的function
+    // ②属性名表达式 :[]
+    // ③Object.is(‘foo’,‘foo’); 比较两个值是否严格相等，与严格比较运
+    // 算符（===）的行为基本一致 +0===-0 NaN===NaN
+    // ④Object.assign(); 对象合并,第一个参数是目标对象，后面的参数
+    // 都是源对象。浅拷贝
+    // ⑤Object.keys() Object.values() Object.entries();
+    // ⑥‘name’		in		obj 判断对象是否包含某个属性
+    // 0	in	arr 判断数组位置是否有值
+
+    // 属性名与变量名同名
+    var obj = {
+        name:name,
+        age:age,
+        sc:'wanghaocheng',
+        say:function(){
+            console.log(this.name);
+        }
+    }
+    var obj2 = {
+        name,
+        age,
+        [sc]:'whanghaocheng2',
+        say(){
+            console.log(this.name);
+        }
+    }
+    // console.log(obj);
+    // console.log(obj2);
+
+    console.log( obj2[sc] );
+    obj.say();
+    obj2.say();
+  </script>
+</body>
+</html>

@@ -47,46 +47,53 @@
       // var arr = new Array(3);
       // console.log(arr.fill(7));
 
-      for( var val of arr){
-          console.log(val);
-      }
-      for( var index of arr.keys()){
-          console.log(index);
-      }
-      for( var [index,val] of arr.entries()){
-          console.log(index,val);
-      }
-      //没有返回值，只是针对每个元素调用函数
-      arr.forEach(function(val,index){
-
-          console.log(val,index)
-      })
+      // for( var val of arr){
+      //     console.log(val);
+      // }
+      // for( var index of arr.keys()){
+      //     console.log(index);
+      // }
+      // for( var [index,val] of arr.entries()){
+      //     console.log(index,val);
+      // }
+      // //没有返回值，只是针对每个元素调用函数
+      // arr.forEach(function(val,index){
+      //
+      //     console.log(val,index)
+      // })
      //返回原数组处理过的新数组
+     // 没有返回值，只是针对每个元素调用func
+     // map(val,index)
+     // filter():返回一个符合func条件的元素数组
+
+
       // var result = arr.map(function(val,index){
-      //     // return val+"xx";
+      //     // return val+"xx";      //["axx", "bxx", "cxx", "dxx", "exx", "fxx", "gxx"]
       //     // if(index>3){
       //     //     return val+"xx";
       //     // }else{
       //     //     return val+"yy";
       //     // }
-      //     return val*2;
+      //     // return val+val;
+      //     return val*2;      //[NaN, NaN, NaN, NaN, NaN, NaN, NaN]
       // });
       // console.log(result);
-      // var arr1 = [
-      //     {
-      //         name:'zs',
-      //         age:10
-      //     },{
-      //         name:'ls',
-      //         age:20
-      //     },{
-      //         name:'ww',
-      //         age:15
-      //     },{
-      //         name:'xx',
-      //         age:30
-      //     }
-      // ]
+
+      var arr1 = [
+          {
+              name:'zs',
+              age:10
+          },{
+              name:'ls',
+              age:20
+          },{
+              name:'ww',
+              age:15
+          },{
+              name:'xx',
+              age:30
+          }
+      ]
       // var result1 = arr.filter(function(val,index){
       //     return index>1;
       // })
@@ -94,10 +101,10 @@
       // console.log(result1);
 
       //返回过滤出的符合条件的新数组
-      // var result2 = arr1.filter(function(obj,index){
-      //     return obj.age>18;
-      // });
-      // console.log(result2);
+      var result2 = arr1.filter(function(obj,index){
+          return obj.age>18;
+      });
+      console.log(result2);
 
 
 
