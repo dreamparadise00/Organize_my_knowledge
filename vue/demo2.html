@@ -39,8 +39,16 @@
   <div id="app">
     <h1>service</h1>
     <ul>
-      <li></li>
+      <li v-for='(obj,index) in arr'
+      :class="{red:obj.active,green:!obj.active}"
+      @click='change(obj)'>
+        {{obj.name}}
+        <span v-text="obj.price"></span>
+      </li>
+
     </ul>
+    <hr/>
+    total: <span>{{total()}}</span>
   </div>
   <script src="vue.js"></script>
   <script>
@@ -48,15 +56,30 @@
       el:'#app',
       data:{
         arr:[
-          {name:111,price:111,active:false},
-          {name:222,price:222,active:false},
-          {name:333,price:333,active:false},
-          {name:444,price:444,active:false},
-          {name:555,price:555,active:false},
+          {name:111,price:11,active:false},
+          {name:222,price:22,active:false},
+          {name:333,price:33,active:false},
+          {name:444,price:44,active:false},
+          {name:555,price:55,active:false},
         ]
       },
       methods:{
+        change(obj){
+          obj.active = !obj.active;
+          // console.log(this.total());
+        },
+        total(){
+          let num = 0;
+          this.arr.forEach(function (val,index)  {
+            if(val.active){
+              num += val.price;
+            }
+            // console.log(num);
+          })
 
+          return num;
+
+        }
       }
     })
   </script>
