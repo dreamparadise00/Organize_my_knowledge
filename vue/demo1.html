@@ -47,7 +47,12 @@
           this.showArr = [...this.arr] ;
         },
         search:function () {
-            var filterArr = this.arr.filter(function(val){
+
+
+            var filterArr = this.arr.filter(function(val){ //箭头函数指向父作用域
+
+
+
               // console.log(val.name.includes(vm.msg));
               // console.log(vm.msg);
                 return val.name.includes(vm.msg);

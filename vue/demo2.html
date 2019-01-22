@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #app{
+        width: 300px;
+        margin: 0 auto;
+    }
+    h1{
+        text-align: center;
+    }
+    li{
+        list-style: none;
+        height: 30px;
+        margin: 10px;
+        padding: 10px;
+        line-height: 30px;
+    }
+    span{
+        float: right;
+    }
+    .red{
+        background: red;
+    }
+    .green{
+        background: green;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>service</h1>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el:'#app',
+      data:{
+        arr:[
+          {name:111,price:111,active:false},
+          {name:222,price:222,active:false},
+          {name:333,price:333,active:false},
+          {name:444,price:444,active:false},
+          {name:555,price:555,active:false},
+        ]
+      },
+      methods:{
+
+      }
+    })
+  </script>
+</body>
+</html>
