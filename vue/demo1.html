@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style media="screen">
+  .active{
+    background: red;
+  }
+</style>
+<body>
+  <div id="app">
+    <input type="text" v-model="msg" @keyup='search()' >
+    <button type="button" name="button" @click='add'>add</button>
+    <ul>
+      <li v-for="(val,index) in showArr" :class="{active:val.isA}" @click="change(val)">
+        {{val.name}}
+        <button @click='del(index)'>del</button>
+      </li>
+    </ul>
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el:'#app',
+      data:{
+        arr:[
+          // {
+          //   name:'aaa',
+          //   isA:false
+          //
+          // },{
+          //   name:"bbb",
+          //   isB:false
+          // }
+        ],
+        msg:'',
+        showArr:[]
+      },
+      methods:{
+        add:function () {
+          this.arr.push({name:this.msg,isA:false});
+          this.msg='';
+          this.showArr = [...this.arr] ;
+        },
+        search:function () {
+            var filterArr = this.arr.filter(function(val){
+              // console.log(val.name.includes(vm.msg));
+              // console.log(vm.msg);
+                return val.name.includes(vm.msg);
+            });
+            this.showArr = filterArr;
+        },
+        del:function (idx) {
+          this.arr.splice(idx,1);
+          this.showArr = [...this.arr];
+        },
+        change(val){
+          val.isA = !val.isA
+        }
+      }
+    })
+  </script>
+</body>
+</html>
