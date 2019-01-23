@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #app{
+      width: 400px;
+      margin:50px auto;
+    }
+    ul{
+      list-style:none;
+    }
+    li{
+      height: 50px;
+      line-height: 50px;
+      padding: 0 10px;
+      margin-bottom: 10px;
+    }
+    .noSelected{
+      background: #ccc;
+    }
+    .selected{
+      background: pink;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>todolist</h1>
+    名称<input type="text">
+    <br>
+    价格<input type="text"><button>添加</button>
+    <br>
+    搜索<input type="text"><button>搜索</button>
+    <ul>
+          <li v-for="val in commodity" :class="{selected:val.isSelect,noSelected:!val.isSelect}">
+            <input type="checkbox" v-model='mySelect':value="val"@click='mySelected(val)'>
+            {{val.name}}
+
+            <span style="float:right;">{{val.price}}
+                <span style="float:right;color:red;margin-left:8px;">{{val.flag}}</span>
+            </span>
+
+
+          </li>
+
+    </ul>
+    <button>删除选中</button>
+    总价{{total()}}
+
+  </div>
+  <script src="vue.js">
+
+  </script>
+  <script type="text/javascript">
+    var vm = new Vue({
+      el:'#app',
+      data:{
+        commodity:[
+          {name:'裤子',price:11,isSelect:false,flag:'[X]'},
+          {name:'衣服',price:22,isSelect:false,flag:'[X]'},
+          {name:'电脑',price:3333,isSelect:false,flag:'[X]'},
+          {name:'iphoneX',price:6666,isSelect:false,flag:'[X]'}
+
+        ],
+        isSelect:false,
+        mySelect:[]
+      },
+      methods:{
+        mySelected(val){
+          val.isSelect = !val.isSelect;
+        },
+        total(){
+          let count = 0;
+          this.mySelect.forEach(function (val) {
+            count += val.price
+          })
+          return count;
+        }
+      }
+    })
+  </script>
+</body>
+</html>
