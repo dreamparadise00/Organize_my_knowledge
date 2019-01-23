@@ -35,9 +35,9 @@
 <body>
   <div id="app">
     <h1>todolist</h1>
-    名称<input type="text" placeholder="请输入姓名">
+    名称<input type="text" placeholder="请输入姓名" v-model="addName">
     <br>
-    价格<input type="text" placeholder="请输入价格"><button @click="add()">添加</button>
+    价格<input type="text" placeholder="请输入价格" v-model="addPrice"><button @click="add()">添加</button>
     <br>
     搜索<input type="text" v-model="searchVal" placeholder="请输入搜索内容"><button @click="search()">搜索</button>
     <ul>
@@ -74,7 +74,9 @@
         isSelect:false,
         mySelect:[],
         searchVal:"",
-        commodity2:[]
+        commodity2:[],
+        addName:"",
+        addPrice:''
       },
       methods:{
         mySelected(val){
@@ -96,16 +98,31 @@
         },
         search(){
           this.commodity2 = [...this.commodity];
-          // if(this.searchVal != ""){
-          //   let newPro = this.commodity.filter((product) => {
-          //     return product.name.includes(this.searchVal);
-          //   });
-          //   this.commodity = newPro;
-          //   this.searchVal=""
-          // }else {
-          //   this.commodity = this.commodity2;
-          // }
+          if(this.searchVal != ""){
+            let newPro = this.commodity.filter((product) => {
+              return product.name.includes(this.searchVal);
+            });
+            this.commodity = newPro;
+            this.searchVal=""
+          }else {
+            this.commodity = this.commodity2;
+          }
 
+        },
+        add(){
+          // console.log(this.addName,this.addPrice);
+          // if(){
+          //
+          // }
+          // console.log(typeof(this.addPrice));
+          this.commodity.push({
+            name:this.addName,
+            price:this.addPrice,
+            isSelect:false,
+            flag:'[X]'
+          })
+          this.addName="";
+          this.addPrice="";
         }
       }
     })
