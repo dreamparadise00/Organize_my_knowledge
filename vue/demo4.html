@@ -41,7 +41,7 @@
     <br>
     搜索<input type="text"><button>搜索</button>
     <ul>
-          <li v-for="val in commodity" :class="{selected:val.isSelect,noSelected:!val.isSelect}">
+          <li v-for="(val,index) in commodity" :class="{selected:val.isSelect,noSelected:!val.isSelect}">
             <input type="checkbox" v-model='mySelect':value="val"@click='mySelected(val)'>
             {{val.name}}
 
@@ -53,7 +53,7 @@
           </li>
 
     </ul>
-    <button>删除选中</button>
+    <button @click="del()">删除选中</button>
     总价{{total()}}
 
   </div>
@@ -84,6 +84,13 @@
             count += val.price
           })
           return count;
+        },
+        del(){
+          let newPro = this.commodity.filter(function (product) {
+            return (product.isSelect != true)
+          })
+          this.commodity = newPro;
+          this.mySelect=[];
         }
       }
     })
