@@ -35,11 +35,11 @@
 <body>
   <div id="app">
     <h1>todolist</h1>
-    名称<input type="text">
+    名称<input type="text" placeholder="请输入姓名">
     <br>
-    价格<input type="text"><button>添加</button>
+    价格<input type="text" placeholder="请输入价格"><button @click="add()">添加</button>
     <br>
-    搜索<input type="text"><button>搜索</button>
+    搜索<input type="text" v-model="searchVal" placeholder="请输入搜索内容"><button @click="search()">搜索</button>
     <ul>
           <li v-for="(val,index) in commodity" :class="{selected:val.isSelect,noSelected:!val.isSelect}">
             <input type="checkbox" v-model='mySelect':value="val"@click='mySelected(val)'>
@@ -72,7 +72,9 @@
 
         ],
         isSelect:false,
-        mySelect:[]
+        mySelect:[],
+        searchVal:"",
+        commodity2:[]
       },
       methods:{
         mySelected(val){
@@ -91,6 +93,19 @@
           })
           this.commodity = newPro;
           this.mySelect=[];
+        },
+        search(){
+          this.commodity2 = [...this.commodity];
+          // if(this.searchVal != ""){
+          //   let newPro = this.commodity.filter((product) => {
+          //     return product.name.includes(this.searchVal);
+          //   });
+          //   this.commodity = newPro;
+          //   this.searchVal=""
+          // }else {
+          //   this.commodity = this.commodity2;
+          // }
+
         }
       }
     })
