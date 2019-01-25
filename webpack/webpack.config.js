@@ -10,6 +10,9 @@ module.exports = {
     filename:'[name].js'
 
   },
+  plugins: [
+
+  ],
   devServer:{
     contentBase:path.resolve(__dirname,'dist'),
     host:'localhost',
