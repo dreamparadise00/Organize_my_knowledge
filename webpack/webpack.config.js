@@ -20,13 +20,18 @@ module.exports = {
       },
       hash:true,
       template:'./src/test.html'
-    })
+    }),
+    // new ExtractTextPlugin("index.css")
   ],
   module:{
     rules:[
       {
         test:/\.css$/,
         use:['style-loader','css-loader']
+        // use:ExtractTextPlugin.extract({
+        //   fallback:"style-loader",
+        //   use:"css-loader"
+        // })
       }
     ]
   },
