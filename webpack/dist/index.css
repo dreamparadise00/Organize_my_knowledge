@@ -9,3 +9,7 @@
     background:url(http://localhost:8081/img/a58a74ef0ebe74dd76586567aeeac762.jpg) 0 0 no-repeat;
 
 }
+#div1 {
+  height: 100px;
+  width: 100px;
+  background: red; }
