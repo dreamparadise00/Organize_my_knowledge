@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   mode:'development',
   entry:{
@@ -9,8 +10,8 @@ module.exports = {
   output:{
 
     path:path.resolve(__dirname,'dist'),
-    filename:'[name].js'
-
+    filename:'[name].js',
+    publicPath:"http://localhost:8081/"
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -21,17 +22,28 @@ module.exports = {
       hash:true,
       template:'./src/test.html'
     }),
-    // new ExtractTextPlugin("index.css")
+    new ExtractTextPlugin("index.css")
   ],
   module:{
     rules:[
       {
         test:/\.css$/,
-        use:['style-loader','css-loader']
-        // use:ExtractTextPlugin.extract({
-        //   fallback:"style-loader",
-        //   use:"css-loader"
-        // })
+        // use:['style-loader','css-loader']
+        use:ExtractTextPlugin.extract({
+          fallback:"style-loader",
+          use:"css-loader"
+        })
+      },{
+        test:/\.(jpg|png|gif)$/,
+                use:[
+                    {
+                        loader:'url-loader',
+                        options:{
+                            limit:5000,
+                            outputPath:'img/'
+                        }
+                    }
+                ]
       }
     ]
   },
@@ -39,6 +51,8 @@ module.exports = {
     contentBase:path.resolve(__dirname,'dist'),
     host:'localhost',
     compress:true,
-    port:8081
+    port:8081,
+    open:true,
+    hot:true
   }
 }
