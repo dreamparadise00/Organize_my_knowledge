@@ -11,7 +11,8 @@
     height: 1rem;
     background-color: rgb(33,150,243);
     display:flex;
-
+    position: fixed;
+    width: 100%;
   }
   .header button{
     width:1rem;

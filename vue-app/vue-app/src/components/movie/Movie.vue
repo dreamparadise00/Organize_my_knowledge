@@ -4,7 +4,11 @@
         <button>首页</button>
       </common-header>
       <movie-nav></movie-nav>
-      <router-view></router-view>
+      <div class="list-box">
+        <movie-list v-for="(obj,index) in movieList" :key="index":title="obj.title"
+        :year="obj.year" :avg="obj.rating.average" :img="obj.images.large" :desc="obj.genres"></movie-list>
+      </div>
+      <!-- <router-view></router-view> -->
       <div class='loading' v-show="isShow">
           <img src="/static/img/loading.gif" alt="">
       </div>
@@ -43,13 +47,13 @@ export default {
   },
   methods:{
     loadData(){
-      console.log("aaa")
+
        Axios.get(API_PROXY + "https://api.douban.com/v2/movie/top250?count=10&start="+this.movieList.length+"&limit=10")
         .then((res)=>{
-          // this.movieList = this.movieList.concat(res.data.data.movies);
+          this.movieList = this.movieList.concat(res.data.subjects);
           // console,log(res.data.data.movies);
-          // this.isShow    = false;
-          console.log(res.data.subjects)
+          this.isShow    = false;
+          // console.log(res.data.subjects)
         });
     }
   }
@@ -66,10 +70,13 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
     .list{
-       margin: 2rem 0 1.6rem;
+       margin: 1rem 0 1.6rem;
     }
     .loading{
        margin-bottom: 1rem;
        text-align   : center;
+    }
+    .movie{
+      overflow: hidden;
     }
 </style>
