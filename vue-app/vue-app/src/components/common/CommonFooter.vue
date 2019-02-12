@@ -14,6 +14,9 @@
   .footer{
     height: 1rem;
     background-color: rgb(33,150,243);
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
 
 
   }
