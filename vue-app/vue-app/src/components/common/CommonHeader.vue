@@ -10,6 +10,7 @@
   .header{
     height: 1rem;
     background-color: rgb(33,150,243);
+    display:flex;
 
   }
   .header button{
@@ -25,5 +26,9 @@
     float: left;
     color: #fff;
     text-align: center;
+    flex: 1;
+    text-indent: -1rem;
+    /* 文本块中首行文本的缩进 */
+
   }
 </style>
