@@ -15,6 +15,15 @@
   .header button{
     width:1rem;
     height:1rem;
-    color:#fff
+    color:#fff;
+    background-color: rgb(33,150,243);
+    border: 0;
+    padding: 0;
+    float: left;
+  }
+  .header h2{
+    float: left;
+    color: #fff;
+    text-align: center;
   }
 </style>
