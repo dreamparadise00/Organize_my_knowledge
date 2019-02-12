@@ -76,7 +76,5 @@ export default {
        margin-bottom: 1rem;
        text-align   : center;
     }
-    .movie{
-      overflow: hidden;
-    }
+    
 </style>

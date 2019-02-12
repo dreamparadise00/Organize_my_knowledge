@@ -17,6 +17,7 @@ Vue.use(VueTouch,{'name':'v-touch'});
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

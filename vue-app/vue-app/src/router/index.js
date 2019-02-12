@@ -19,13 +19,27 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path     : '/login',
+      component: Login
     },
     {
-      path:'/movie',
-      component:Movie
+      path     : '/index',
+      component: Index
+    },
+    {
+      path: '/',
+      // component:
+      redirect: '/movie/top250'
+    },
+    {
+      path     : '/movie',
+      component: Movie,
+      redirect : '/movie/top250',
+      children : [
+        {path:'/movie/top250',component:MovieTop250},
+        {path:'/movie/hot',component:MovieTop250},
+        {path:'/movie/coming',component:MovieTop250}
+      ]
     },
     {
       path     : '/music',
@@ -35,6 +49,18 @@ export default new Router({
         {path:'/music/music_albums',component:Albums},
         {path:'/music/music_player/:id',component:Player}
       ]
+    },
+    {
+      path     : '/book',
+      component: Book
+    },
+    {
+      path     : '/photo',
+      component: Photo
+    },
+    {
+      path     : '/photo_detail/:index',
+      component: PhotoDetail
     }
   ]
 })
