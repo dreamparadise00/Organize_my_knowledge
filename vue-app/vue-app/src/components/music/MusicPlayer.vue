@@ -1,7 +1,6 @@
 <template>
     <div class='player'>
-        <a-player :music="musicList"
-         v-if="isShow">
+        <a-player :music="musicList">
         </a-player>
         <!-- {{$route.params.id}} -->
     </div>
