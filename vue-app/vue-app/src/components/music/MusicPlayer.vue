@@ -1,6 +1,6 @@
 <template>
     <div class='player'>
-        <a-player :music="musicList" 
+        <a-player :music="musicList"
          v-if="isShow">
         </a-player>
         <!-- {{$route.params.id}} -->
@@ -26,16 +26,16 @@ export default {
       .then((res)=>{
           this.musicData = res.data.musicData;
           console.log(res.data.musicData);
-          for(var i=0;i< this.musicData.length;i++){
-              var obj        = new Object();
-                  obj.title  = this.musicData[i].title;
-                  obj.author = this.musicData[i].author;
-                  obj.url    = this.musicData[i].src;
-                  obj.pic    = this.musicData[i].musicImgSrc;
-                  obj.lrc    = "/static/"+this.musicData[i].lrc;
-                  this.musicList.push(obj);
-          }
-          this.isShow = true;
+          // for(var i=0;i< this.musicData.length;i++){
+          //     var obj        = new Object();
+          //         obj.title  = this.musicData[i].title;
+          //         obj.author = this.musicData[i].author;
+          //         obj.url    = this.musicData[i].src;
+          //         obj.pic    = this.musicData[i].musicImgSrc;
+          //         obj.lrc    = "/static/"+this.musicData[i].lrc;
+          //         this.musicList.push(obj);
+          // }
+          // this.isShow = true;
       });
   },
   components:{
