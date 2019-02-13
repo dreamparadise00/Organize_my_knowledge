@@ -1,9 +1,9 @@
 <template>
     <div class='player'>
-        <!-- <a-player :music="musicList" :narrow="false" :autoplay="true" :showlrc="3"
-        :mutex="true" theme="#ff0000" listmaxheight="513px" v-if="isShow">
-        </a-player> -->
-        {{$route.params.id}}
+        <a-player :music="musicList" 
+         v-if="isShow">
+        </a-player>
+        <!-- {{$route.params.id}} -->
     </div>
 
 </template>
@@ -21,7 +21,7 @@ export default {
           isShow   : false
       }
   },
-  mounted(){
+  beforeCreate(){
       Axios.get('/static/music-data.json')
       .then((res)=>{
           this.musicData = res.data.musicData;
