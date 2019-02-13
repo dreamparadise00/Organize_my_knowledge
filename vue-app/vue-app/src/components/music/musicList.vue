@@ -1,7 +1,7 @@
 <template>
     <div class="music-list">
         <ul class='albums'>
-           
+
             <li v-for='obj in musicList' :key="obj.id">
                 <router-link :to="'/music/music_player/'+obj.id">
                     <img :src="obj.bg" alt="">
@@ -22,6 +22,7 @@ export default {
         Axios.get('/static/musiclist.json')
         .then((res)=>{
             this.musicList = res.data.albums;
+            console.log(res.data)
         })
     },
 }
@@ -43,4 +44,3 @@ export default {
          height: 100%;
     }
 </style>
-

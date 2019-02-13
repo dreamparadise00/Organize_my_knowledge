@@ -1,9 +1,9 @@
 <template>
     <div class='player'>
-        <a-player :music="musicList" :narrow="false" :autoplay="true" :showlrc="3"
+        <!-- <a-player :music="musicList" :narrow="false" :autoplay="true" :showlrc="3"
         :mutex="true" theme="#ff0000" listmaxheight="513px" v-if="isShow">
-        </a-player>
-        <!-- {{$route.params.id}} -->
+        </a-player> -->
+        {{$route.params.id}}
     </div>
 </template>
 <script>
@@ -21,6 +21,7 @@ export default {
       Axios.get('/static/music-data.json')
       .then((res)=>{
           this.musicData = res.data.musicData;
+          console.log(res.data.musicData);
           for(var i=0;i< this.musicData.length;i++){
               var obj        = new Object();
                   obj.title  = this.musicData[i].title;
@@ -36,7 +37,7 @@ export default {
   components:{
       APlayer
   }
-  
+
 }
 </script>
 <style>

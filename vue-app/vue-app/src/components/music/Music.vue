@@ -2,6 +2,12 @@
     <div class="music">
         <common-header title="music" nav="<" bgColor="rgb(0, 150, 136)"></common-header>
         <router-view></router-view>
+        <!-- <ul class="albums">
+          <li v-for='obj in musicList' :key='obj.id'
+          :style='{background:"url("+obj.bg+") no repeat"}'>
+
+          </li>
+        </ul> -->
         <common-footer bgColor="rgb(0, 150, 136)"></common-footer>
     </div>
 </template>
@@ -19,7 +25,7 @@ export default {
         Axios.get('/static/musiclist.json')
         .then((res)=>{
             this.musicList = res.data.albums;
-            console.log(res.data.albums)
+            console.log(this.musicList)
         })
     },
   components:{
