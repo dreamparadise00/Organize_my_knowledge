@@ -5,13 +5,14 @@
         </a-player> -->
         {{$route.params.id}}
     </div>
-    
+
 </template>
 
 <script>
 import Axios from "axios"
 import APlayer from 'vue-aplayer'
 export default {
+  
   data(){
       return {
           musicData: [],
