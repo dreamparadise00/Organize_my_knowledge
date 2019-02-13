@@ -5,6 +5,7 @@
         </a-player> -->
         {{$route.params.id}}
     </div>
+    
 </template>
 
 <script>
