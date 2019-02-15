@@ -12,7 +12,7 @@ export default {
   props: ['title','bgColor','nav'],
   data () {
     return {
-      
+
     }
   },
   methods:{
@@ -39,6 +39,8 @@ export default {
         width : 1rem;
         height: 1rem;
         color : #fff;
+        border:0;
+        padding:0;
       }
       .header h2{
         flex       : 1;
