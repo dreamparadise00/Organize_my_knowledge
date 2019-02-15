@@ -1,8 +1,8 @@
 <template>
-    <div class="footer" :style="{background:bg}">
+    <div class="footer" :style="{background:color}" >
         <ul>
             <li v-for="(obj,index) in menu" :key="index" >
-                <router-link :to="obj.path" @click.native="change(obj)">{{obj.name}}</router-link>
+                <router-link :to="obj.path" @click.native="change(obj)" >{{obj.name}}</router-link>
             </li>
         </ul>
 
@@ -10,20 +10,11 @@
 </template>
 
 <script>
+    import {mapState,mapMutations} from "vuex";
     export default {
-        data(){
-            return {
-                bg:''
-            }
-        },
         props:["menu"],
-        methods:{
-            change(obj){
-                this.bg = obj.bgColor;
-                // 通过$emit 向父组件app 传参this.bg
-                this.$emit('changeBg',obj);
-            }
-        }
+        computed: mapState(["color","name"]),
+        methods: mapMutations(["change"])
     }
 </script>
 
