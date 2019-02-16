@@ -30,7 +30,8 @@ import Axios from "axios";
           }
       },
       created() {
-
+        this.getMovie();
+          
       },
       methods:{
         getMovie(){
@@ -43,6 +44,7 @@ import Axios from "axios";
               // this.movieList = result.data.subjects;
               // console.log(this.movieList)
                   this.movieList = [...this.movieList,...result.data.subjects];
+                  console.log(this.movieList)
                   this.isShow = false;
                   if(this.movieList.length == result.data.total){
                       this.isBottom = true;
