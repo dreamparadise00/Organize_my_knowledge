@@ -24,20 +24,33 @@ import Axios from "axios";
   export default {
       data(){
           return {
-              movieList:[]
+              movieList:[],
+              isShow:false,
+              isBottom:false
           }
       },
       created() {
-          // jsonbird  服务器代理 解决跨域 https://bird.ioliu.cn/v1?url=
-          Axios.get("https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?city=广州&start=0&count=10")
-          .then((result)=>{
-              console.log(result.data);
-              this.movieList = result.data.subjects;
-              console.log(this.movieList)
 
+      },
+      methods:{
+        getMovie(){
+          // jsonbird  服务器代理 解决跨域 https://bird.ioliu.cn/v1?url=
+          this.isShow = true;
+
+          Axios.get("https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?city=广州&start="+this.movieList.length+"&count=10")
+          .then((result)=>{
+              // console.log(result.data);
+              // this.movieList = result.data.subjects;
+              // console.log(this.movieList)
+                  this.movieList = [...this.movieList,...result.data.subjects];
+                  this.isShow = false;
+                  if(this.movieList.length == result.data.total){
+                      this.isBottom = true;
+                  }
           })
           .catch();
-      },
+        }
+      }
   }
 </script>
 
