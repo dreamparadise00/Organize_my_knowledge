@@ -1,9 +1,9 @@
 <template>
     <div class='player'>
-      <a-player :music="musicList" :narrow="false" :autoplay="true" :showlrc="3"
-      :mutex="true" theme="#ff0000" listmaxheight="513px" v-if="isShow">
+      <a-player :music="musicList[1]"  v-if="isShow">
       </a-player>
         <!-- {{$route.params.id}} -->
+
     </div>
 
 </template>
@@ -19,6 +19,7 @@ export default {
           musicData: [],
           musicList: [],
           isShow   : false
+
       }
   },
   mounted(){
@@ -29,8 +30,8 @@ export default {
           for(var i=0;i< this.musicData.length;i++){
               let obj     =  {
                   title  : this.musicData[i].title,
-                  author : this.musicData[i].author,
-                  url    : this.musicData[i].src,
+                  artist : this.musicData[i].author,
+                  src    : this.musicData[i].src,
                   pic    : this.musicData[i].musicImgSrc,
                   lrc    : "/static/"+this.musicData[i].lrc
                 }
