@@ -12,6 +12,9 @@
 
 import {mapState} from 'vuex';
 import Axios from 'axios'
+import Vue from 'vue'
+var VueTouch = require('vue-touch')
+Vue.use(VueTouch, {name: 'v-touch'})
 
 export default {
     data(){
@@ -23,7 +26,7 @@ export default {
     computed: {
         bg(){
             return "url("+ this.$store.state.photoData[this.idx].src +") no-repeat center / contain #000"
-            console.log(this.idx)
+            // console.log(this.idx)
         },
         ...mapState(["photoData"])
     },
