@@ -33,7 +33,7 @@ export default new Router({
       component:Player
     },
     {
-      path     : '/photo_detail/:index',
+      path: '/photo/detail/:index',
       component: PhotoDetail
     }
   ]

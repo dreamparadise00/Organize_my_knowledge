@@ -16,7 +16,10 @@
 
              <!-- {{obj}} -->
          </li>
+         <img class="loading" v-show="isShow" src="@/assets/imgs/loading.gif" alt="" no-repeat>
+         <div v-show="isBottom">到底了</div>
      </ul>
+
 </template>
 
 <script>
@@ -38,8 +41,8 @@ import Axios from "axios";
             console.log(document.documentElement.clientHeight);
             // 整个滚动区的高度
             console.log(document.documentElement.scrollHeight);
-//如果 scrollTop 到底的时候取到的是小数
-// Math.abs(document.documentElement.scrollTop +document.documentElement.clientHeight - document.documentElement.scrollHeight) < 1
+            //如果 scrollTop 到底的时候取到的是小数
+            // Math.abs(document.documentElement.scrollTop +document.documentElement.clientHeight - document.documentElement.scrollHeight) < 1
             if( document.documentElement.scrollTop +document.documentElement.clientHeight ==  document.documentElement.scrollHeight && !this.isBottom){
                 this.getMovie();
             }

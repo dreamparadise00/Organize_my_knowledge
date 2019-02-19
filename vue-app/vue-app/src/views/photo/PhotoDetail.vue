@@ -1,10 +1,11 @@
 <template>
   <div class='detail'>
 
-        <!-- <v-touch class='photo-detail' :style="{background:bg}"
+        <v-touch class='photo-detail' :style="{background:bg}"
         @swipeleft="left" @swiperight="right">
-        </v-touch> -->
-        {{bg}}
+        </v-touch>
+
+
   </div>
 </template>
 <script>
@@ -15,13 +16,14 @@ import Axios from 'axios'
 export default {
     data(){
       return {
-          aa: this.$route.params.index,
+          idx: this.$route.params.index
         //   photoData: this.$store.state.photoData
       }
     },
     computed: {
         bg(){
-            return "url("+ this.$store.state.photoData[this.aa].src +") no-repeat center / contain #000"
+            return "url("+ this.$store.state.photoData[this.idx].src +") no-repeat center / contain #000"
+            console.log(this.idx)
         },
         ...mapState(["photoData"])
     },
@@ -31,6 +33,9 @@ export default {
         },
         right(){
             this.aa--;
+        },
+        why(){
+          console.log(this.idx);
         }
     }
 }
@@ -38,7 +43,7 @@ export default {
 <style>
     .photo-detail{
         position: absolute;
-        top     : 1rem;
+        top     : 0.8rem;
         bottom  : 0;
         width   : 100%;
     }

@@ -25,6 +25,7 @@ export default new Vuex.Store({
         state.count--;
     },
     setPhotoData(state,data){
+        // console.log(data);
         state.photoData = data;
     }
   },
