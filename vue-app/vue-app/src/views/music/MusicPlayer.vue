@@ -24,7 +24,7 @@ export default {
       }
   },
   mounted(){
-      Axios.get('/static/music-data.json')
+      Axios.get('https://hdwanghaocheng.github.io/Organize_my_knowledge/vue-app/vue-app/dist/static/music-data.json')
       .then((res)=>{
           this.musicData = res.data.musicData;
           console.log(res.data.musicData);
