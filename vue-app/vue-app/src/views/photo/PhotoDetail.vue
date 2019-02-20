@@ -32,13 +32,10 @@ export default {
     },
     methods:{
         left(){
-            this.aa++;
+            this.idx++;
         },
         right(){
-            this.aa--;
-        },
-        why(){
-          console.log(this.idx);
+            this.idx--;
         }
     }
 }
