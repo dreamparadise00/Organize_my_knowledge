@@ -21,7 +21,7 @@ export default {
         }
     },
     mounted(){
-        Axios.get('../../assets/musiclist.json')
+        Axios.get('static/musiclist.json')
         .then((res)=>{
             this.musicList = res.data.albums;
             // console.log(res.data.albums)
