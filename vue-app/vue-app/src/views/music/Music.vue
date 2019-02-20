@@ -21,7 +21,7 @@ export default {
         }
     },
     mounted(){
-        Axios.get('https://hdwanghaocheng.github.io/Organize_my_knowledge/vue-app/vue-app/dist/static/musiclist.json')
+        Axios.get('./musiclist.json')
         .then((res)=>{
             this.musicList = res.data.albums;
             // console.log(res.data.albums)
