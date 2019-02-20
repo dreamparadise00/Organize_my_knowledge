@@ -24,6 +24,7 @@ export default {
 @import "../../assets/css/vue-swipe.css";
 .my-swipe {
   height    : 8rem;
+  
   color     : #fff;
   font-size : 30px;
   text-align: center;
