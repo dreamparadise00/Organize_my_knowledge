@@ -29,6 +29,7 @@ export default {
         Axios.get('https://hdwanghaocheng.github.io/Organize_my_knowledge/vue-app/vue-app/dist/static/photo-data.json')
         .then((res)=>{
             this.setPhotoData(res.data.photoData);
+            
         })
     }
 
