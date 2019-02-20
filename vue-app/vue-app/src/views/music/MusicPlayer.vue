@@ -24,7 +24,7 @@ export default {
       }
   },
   mounted(){
-      Axios.get('@/assets/music-data.json')
+      Axios.get('assets/music-data.json')
       .then((res)=>{
           this.musicData = res.data.musicData;
           console.log(res.data.musicData);
