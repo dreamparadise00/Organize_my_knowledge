@@ -25,6 +25,7 @@
                     num : 1
                 }
                 this.addHandle = this.addHandle.bind(this)
+                // 自定义的方法中this值为 undefined  需要bind() 改变this指向
             }
             addHandle(){
                 // num++;
