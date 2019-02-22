@@ -21,7 +21,7 @@ export default {
         }
     },
     mounted(){
-        Axios.get('static/musiclist.json')
+        Axios.get('https://bird.ioliu.cn/v1?url=/static/musiclist.json')
         .then((res)=>{
             this.musicList = res.data.albums;
             // console.log(res.data.albums)

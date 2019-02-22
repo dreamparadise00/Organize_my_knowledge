@@ -24,7 +24,7 @@ export default {
       }
   },
   mounted(){
-      Axios.get('/static/music-data.json')
+      Axios.get('https://bird.ioliu.cn/v1?url=/static/music-data.json')
       .then((res)=>{
           this.musicData = res.data.musicData;
           console.log(res.data.musicData);
