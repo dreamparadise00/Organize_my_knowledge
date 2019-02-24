@@ -1,0 +1,21 @@
+.list >ul{
+    /* padding-inline-start:0 !important; */
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.list >ul>li{
+    float: left;
+    list-style: none;
+}
+.icon{
+    height: 70px;
+    width: 70px;
+}
+.icon a>img{
+    height: 44px;
+    width: 44px;
+}
+.icon a>span{
+    color: #666;
+}
