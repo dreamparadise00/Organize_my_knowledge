@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
-import { NavBar, Icon } from 'antd-mobile';
+import { NavBar, Icon,SearchBar} from 'antd-mobile';
+import './../asset/css/home.css';
 
 export default class Detail extends Component{
   render(){
@@ -7,13 +8,14 @@ export default class Detail extends Component{
       <div>
       <NavBar
       mode="light"
-      icon={<Icon type="left" />}
-      onLeftClick={() => console.log('onLeftClick')}
+      leftContent="哈尔滨"
       rightContent={[
-        <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
         <Icon key="1" type="ellipsis" />,
       ]}
-    >首页</NavBar>
+    >
+      <SearchBar placeholder="请输入搜索内容" maxLength={8} />
+    </NavBar>
+
       </div>
     )
   }
