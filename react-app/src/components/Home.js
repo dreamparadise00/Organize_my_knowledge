@@ -1,8 +1,7 @@
 import React,{Component} from 'react';
 import { NavBar, Icon,SearchBar,Grid,WhiteSpace,Flex} from 'antd-mobile';
 import './../asset/css/home.css';
-import './../asset/css/reset.css';
-import './../asset/js/rem.js';
+
 import Container from './Container'
 
 // const data=Array.from(new Array(9)).map((_val,i)) => ({
@@ -101,7 +100,9 @@ export default class Home extends Component{
       </Flex.Item>
     </Flex>
     <WhiteSpace size="lg">  </WhiteSpace>
-    <Container></Container>
+    <Container title="猜你喜欢">
+      <h2>这是我的内容</h2>
+    </Container>
 
 
       </div>
