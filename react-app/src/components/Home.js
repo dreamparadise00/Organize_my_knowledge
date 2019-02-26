@@ -2,6 +2,12 @@ import React,{Component} from 'react';
 import { NavBar, Icon,SearchBar,Grid} from 'antd-mobile';
 import './../asset/css/home.css';
 import './../asset/css/reset.css';
+
+const data=Array.from(new Array(9)).map((_val,i)) => ({
+  icon:`img${i}`,
+  text:`name${i}`,
+})
+
 export default class Home extends Component{
   render(){
     return (
