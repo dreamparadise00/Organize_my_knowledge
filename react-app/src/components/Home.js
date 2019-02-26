@@ -4,6 +4,7 @@ import './../asset/css/home.css';
 
 import Container from './Container';
 import Product from './Product';
+import 'whatwg-fetch';
 
 // const data=Array.from(new Array(9)).map((_val,i)) => ({
 //   icon:`img${i}`,
@@ -66,6 +67,16 @@ export default class Home extends Component{
       ]
     }
   }
+
+  componentWillMount(){
+    fetch('./../asset/js/data.json')
+    .then(function(response) {
+      return response.json()
+    }).then(function(data) {
+      console.log(data)
+  })
+  }
+
   render(){
     return (
       <div>
