@@ -3,14 +3,14 @@ import React,{Component} from 'react'
 export default() => {
   return(
     <div className="pro-container">
-      <img src={require("./../asset/img/yule.png")}></img>
+      <img className="pro-img" src={props.elem.img}></img>
       <div className="pro-content">
-        <h3 className="pro-title">标题</h3>
-        <p className="pro-detail">这是一个内容</p>
+        <h3 className="pro-title">{props.elem.product_name}</h3>
+        <p className="pro-detail">{props.elem.description}</p>
         <div>
-          <span className="pro-current-price">10</span>
-          <span className="pro-door-price">门市价 20</span>
-          <span className="pro-sold">已售6</span>
+          <span className="pro-current-price">{props.elem.discount_price}</span>
+          <span className="pro-door-price">门市价 {props.elem.price}</span>
+          <span className="pro-sold">已售{props.elem.num}</span>
         </div>
       </div>
     </div>

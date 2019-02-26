@@ -69,11 +69,15 @@ export default class Home extends Component{
   }
 
   componentWillMount(){
-    fetch('./../asset/js/data.json')
-    .then(function(response) {
-      return response.json()
-    }).then(function(data) {
-      console.log(data)
+    fetch('./../data.json')
+  .then((response) => {
+    return response.json()
+  }).then((data) => {
+    this.setState({
+      product:data
+    })
+  }).catch((ex) => {
+    console.log('parsing failed', ex)
   })
   }
 
@@ -113,7 +117,12 @@ export default class Home extends Component{
     </Flex>
     <WhiteSpace size="lg">  </WhiteSpace>
     <Container title="猜你喜欢">
-      <Product></Product>
+      {
+        this.state.product.map((elem,index)=>{
+          return  <Product key={elem.product_id} elem={elem}></Product>
+        })
+      }
+
     </Container>
 
 
