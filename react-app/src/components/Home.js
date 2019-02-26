@@ -1,7 +1,9 @@
 import React,{Component} from 'react';
-import { NavBar, Icon,SearchBar,Grid} from 'antd-mobile';
+import { NavBar, Icon,SearchBar,Grid,WhiteSpace,Flex} from 'antd-mobile';
 import './../asset/css/home.css';
 import './../asset/css/reset.css';
+import './../asset/js/rem.js';
+import Container from './Container'
 
 // const data=Array.from(new Array(9)).map((_val,i)) => ({
 //   icon:`img${i}`,
@@ -52,6 +54,14 @@ export default class Home extends Component{
         {
           icon:require('./../asset/img/jipiao.png'),
           text:"机票"
+        },
+        {
+          icon:require('./../asset/img/xiaochi.png'),
+          text:"小吃"
+        },
+        {
+          icon:require('./../asset/img/jipiao.png'),
+          text:"机票"
         }
       ]
     }
@@ -69,6 +79,31 @@ export default class Home extends Component{
       <SearchBar placeholder="请输入搜索内容" maxLength={8} />
     </NavBar>
     <Grid data={this.state.data} isCarousel columnNum={5} />
+    <WhiteSpace size="lg">  </WhiteSpace>
+    <Flex>
+      <Flex.Item>
+        <h3 className="active-title">我们约会吧</h3>
+        <p className="active-text">恋人家人好朋友</p>
+        <img className="acive-img" src={require("../asset/img/activity1.png")}></img>
+
+      </Flex.Item>
+      <Flex.Item>
+        <h3 className="active-title">我们约会吧</h3>
+        <p className="active-text">恋人家人好朋友</p>
+        <img className="acive-img" src={require("../asset/img/activity1.png")}></img>
+
+      </Flex.Item>
+      <Flex.Item>
+        <h3 className="active-title">我们约会吧</h3>
+        <p className="active-text">恋人家人好朋友</p>
+        <img className="acive-img" src={require("../asset/img/activity1.png")}></img>
+
+      </Flex.Item>
+    </Flex>
+    <WhiteSpace size="lg">  </WhiteSpace>
+    <Container></Container>
+
+
       </div>
     )
   }
