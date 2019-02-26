@@ -2,7 +2,8 @@ import React,{Component} from 'react';
 import { NavBar, Icon,SearchBar,Grid,WhiteSpace,Flex} from 'antd-mobile';
 import './../asset/css/home.css';
 
-import Container from './Container'
+import Container from './Container';
+import Product from './Product';
 
 // const data=Array.from(new Array(9)).map((_val,i)) => ({
 //   icon:`img${i}`,
@@ -101,7 +102,7 @@ export default class Home extends Component{
     </Flex>
     <WhiteSpace size="lg">  </WhiteSpace>
     <Container title="猜你喜欢">
-      <h2>这是我的内容</h2>
+      <Product></Product>
     </Container>
 
 
