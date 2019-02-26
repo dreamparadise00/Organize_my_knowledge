@@ -4,7 +4,7 @@ export default() => {
   return(
     <div className="pro-container">
       <img src={require("./../asset/img/yule.png")}></img>
-      <div>
+      <div className="pro-content">
         <h3 className="pro-title">标题</h3>
         <p className="pro-detail">这是一个内容</p>
         <div>
