@@ -11,6 +11,8 @@ import 'whatwg-fetch';
 //   text:`name${i}`,
 // })
 
+
+
 export default class Home extends Component{
   constructor(props) {
     super(props);
@@ -65,21 +67,25 @@ export default class Home extends Component{
           text:"机票"
         }
       ]
-    }
+    };
+    this.newData = [];
   }
 
   componentWillMount(){
-    fetch('./../data.json')
+    fetch('./data.json')
   .then((response) => {
     return response.json()
   }).then((data) => {
-    this.setState({
-      product:data
-    })
-  }).catch((ex) => {
-    console.log('parsing failed', ex)
+    this.newData.push(data)
   })
+
   }
+
+  componentDidUpdate(){
+    console.log(this.newData);
+  }
+
+
 
   render(){
     return (
@@ -118,10 +124,15 @@ export default class Home extends Component{
     <WhiteSpace size="lg">  </WhiteSpace>
     <Container title="猜你喜欢">
       {
-        this.state.product.map((elem,index)=>{
+
+        this.newData.map((elem,index)=>{
           return  <Product key={elem.product_id} elem={elem}></Product>
         })
+
+
+
       }
+
 
     </Container>
 
