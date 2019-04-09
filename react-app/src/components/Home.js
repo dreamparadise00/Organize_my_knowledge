@@ -72,7 +72,7 @@ export default class Home extends Component{
   }
 
   componentWillMount(){
-    fetch('./data.json')
+    fetch('http://www.xiechenxi.cn')
   .then((response) => {
     return response.json()
   }).then((data) => {
